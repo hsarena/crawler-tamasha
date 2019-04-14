@@ -24,6 +24,9 @@ class TamashaPipeline(object):
         tamashadb.description = item['description']
         tamashadb.tags = item['tags']
         tamashadb.thumbnail = item['thumbnail']
+        tamashadb.url = item['url']
+        tamashadb.qr = item['qr']
+        tamashadb.embed = item['embed']
 
         try:
             session.add(tamashadb)

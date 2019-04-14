@@ -30,5 +30,8 @@ class TamashaDB(DeclarativeBase):
     tags = Column('tags', String(30))
     description = Column('description', Text())
     thumbnail = Column('thumbnail', String(70))
+    url = Column('url', String(70))
+    qr = Column('qr', String(70))
+    embed = Column('embed', String(70))
 
 

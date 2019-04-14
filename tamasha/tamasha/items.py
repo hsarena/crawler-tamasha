@@ -18,3 +18,6 @@ class TamashaItem(Item):
     description = Field()
     tags = Field()
     thumbnail = Field()
+    url = Field()
+    qr = Field()
+    embed = Field()
