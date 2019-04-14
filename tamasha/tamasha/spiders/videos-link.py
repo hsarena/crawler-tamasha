@@ -18,7 +18,7 @@ class VideosSpider(CrawlSpider):
         item = TamashaItem()
         item['category'] = response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[2]/div[3]/div[2]/a/text()').get()
         item['title'] = response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/h1/text()').get()
-        item['link'] = response.url
+        item['link'] = response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[1]/div/div/*//@src').get()
         item['publisher'] = response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/a[2]/text()').get()
         item['publisher_logo'] = response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/a[1]/img/@src').get()
         tmp = str(response.xpath('//*[@id="pageContent"]/div/div/div[1]/div[2]/div[2]/div[3]/div[1]/span[2]').get())
