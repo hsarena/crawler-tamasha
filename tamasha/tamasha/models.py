@@ -23,6 +23,12 @@ class TamashaDB(DeclarativeBase):
     id = Column(Integer, primary_key=True)
     category = Column('category', String(100))
     title = Column('title', String(250), unique=True)
-    link = Column('link', String(200))
+    link = Column('link', String(100))
+    date_added = Column('date_added', String(100))
+    publisher = Column('publisher', String(50))
+    publisher_logo = Column('publisher', String(70))
+    tags = Column('tags', String(30))
+    description = Column('description', Text())
+    thumbnail = Column('thumbnail', String(70))
 
 

@@ -18,6 +18,12 @@ class TamashaPipeline(object):
         tamashadb.category = item['category']
         tamashadb.title = item['title']
         tamashadb.link = item['link']
+        tamashadb.date_added = item['date_added']
+        tamashadb.publisher = item['publisher']
+        tamashadb.publisher_logo = item['publisher_logo']
+        tamashadb.description = item['description']
+        tamashadb.tags = item['tags']
+        tamashadb.thumbnail = item['thumbnail']
 
         try:
             session.add(tamashadb)
