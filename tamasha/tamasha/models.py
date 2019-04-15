@@ -33,5 +33,6 @@ class TamashaDB(DeclarativeBase):
     url = Column('url', String(70))
     qr = Column('qr', String(70))
     embed = Column('embed', String(70))
+    created_date = Column('created_date', DateTime())
 
 

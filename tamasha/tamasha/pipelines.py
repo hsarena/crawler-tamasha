@@ -1,5 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from tamasha.models import TamashaDB, db_connect, create_table
+from datetime import  datetime
 
 class TamashaPipeline(object):
 
@@ -15,6 +16,8 @@ class TamashaPipeline(object):
     def process_item(self, item, spider):
         session = self.Session()
         tamashadb = TamashaDB()
+        now = datetime.now()
+        formated_date = now.strftime('%Y-%m-%d %H:%M:%S')
         tamashadb.category = item['category']
         tamashadb.title = item['title']
         tamashadb.link = item['link']
@@ -27,6 +30,7 @@ class TamashaPipeline(object):
         tamashadb.url = item['url']
         tamashadb.qr = item['qr']
         tamashadb.embed = item['embed']
+        tamashadb.created_date = formated_date
 
         try:
             session.add(tamashadb)
